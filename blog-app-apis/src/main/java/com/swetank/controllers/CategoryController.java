@@ -19,6 +19,8 @@ import com.swetank.payloads.CategoryDto;
 import com.swetank.payloads.UserDto;
 import com.swetank.services.CategoryService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {
@@ -28,14 +30,14 @@ public class CategoryController {
 	
 	//create
 	@PostMapping("/")
-	public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto categoryDto){
+	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto){
 		CategoryDto createdCategoryDto = this.categoryService.createCategory(categoryDto);
 		return new ResponseEntity<CategoryDto>(createdCategoryDto,HttpStatus.CREATED);
 	}
 	
 	//update
 	@PutMapping("/{categoryId}")
-	public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto,@PathVariable Integer categoryId){
+	public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto,@PathVariable Integer categoryId){
 		CategoryDto updatedCategoryDto = this.categoryService.updateCategory(categoryDto, categoryId);
 		return new ResponseEntity<CategoryDto>(updatedCategoryDto,HttpStatus.OK);
 	}
