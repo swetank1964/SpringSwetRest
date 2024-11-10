@@ -2,9 +2,8 @@ package com.swetank.payloads;
 
 import java.util.Date;
 
-import com.swetank.entities.Category;
-import com.swetank.entities.User;
-
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,15 +13,20 @@ import lombok.Setter;
 @Setter
 public class PostDto {
 
+	@NotEmpty
+	@Size(min=4,message="Title must be min of 4 characters")
 	private String title;
 	
+	@NotEmpty
+	@Size(min=10,max=1000,message="Content must be between 10 and 1000 characters")
 	private String content;
+	
 	
 	private String imageName;
 	
 	private Date addedDate;
 	
-	private Category category;
+	private CategoryDto category;
 	
-	private User user;
+	private UserDto user;
 }
