@@ -8,7 +8,7 @@ public interface PostService {
 
 	
 	//create
-	PostDto createPost(PostDto postDto);
+	PostDto createPost(PostDto postDto,Integer userId,Integer categoryId);
 	
 	//update
 	PostDto updatePost(PostDto postDto,Integer postId);
