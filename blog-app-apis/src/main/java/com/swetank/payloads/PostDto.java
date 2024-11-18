@@ -12,6 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PostDto {
+	
+	private Integer postId;
 
 	@NotEmpty
 	@Size(min=4,message="Title must be min of 4 characters")
