@@ -3,6 +3,7 @@ package com.swetank.services;
 import java.util.List;
 
 import com.swetank.payloads.PostDto;
+import com.swetank.payloads.PostResponse;
 
 public interface PostService {
 
@@ -20,7 +21,7 @@ public interface PostService {
 	PostDto getPostById(Integer postId);
 	
 	//get All
-	List<PostDto> getAllPost(Integer pageNumber,Integer pageSize);
+	PostResponse getAllPost(Integer pageNumber,Integer pageSize,String sortBy,String sortDir);
 	
 	//get All By User
 	List<PostDto> getAllPostsByUser(Integer userId);
