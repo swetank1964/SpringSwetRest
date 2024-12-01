@@ -1,6 +1,10 @@
 package com.swetank.payloads;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.swetank.entities.Comment;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -31,4 +35,6 @@ public class PostDto {
 	private CategoryDto category;
 	
 	private UserDto user;
+	
+	private Set<CommentDto> comments = new HashSet<>();
 }
