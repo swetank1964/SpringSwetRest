@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.swetank.entities.User;
+import com.swetank.exception.ResourceNotFoundException;
 import com.swetank.exception.UserNotFoundException;
 import com.swetank.repositories.UserRepo;
 

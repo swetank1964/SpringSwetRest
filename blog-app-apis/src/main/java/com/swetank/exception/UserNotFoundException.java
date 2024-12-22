@@ -1,5 +1,10 @@
 package com.swetank.exception;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class UserNotFoundException extends RuntimeException {
 
 	String resourceName;
@@ -12,6 +17,7 @@ public class UserNotFoundException extends RuntimeException {
 		this.resourceName = resourceName;
 		this.fieldName = fieldName;
 		this.fieldValue = fieldValue;
+		
 	}
 	
 	
